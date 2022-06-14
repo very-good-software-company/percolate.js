@@ -1,0 +1,100 @@
+# Percolate.js
+Build websites/webapps using standard web apis and custom tags all while enjoying simple JS hydration.
+
+## Why Percolate.js?
+I built Percolate for the sole purpose of being able to build rich, interactive websites that load fast and don't rely on large build-tools, setting up environments, or complex JS-only frameworks. The entire idea of Percolate is to allow for one to build simple static sites that have a small layer of dynamic interactivity to them all using simple HTML, CSS, and JS.
+
+## How does Percolate.js work?
+Percolate.js uses a few web apis to allow for basic HTML pages to be transformed via hydrating custom, semantic tags. Currently the libary uses:
+- `dynamic imports`
+- `Intersection Observer`
+- `document.evaluate`
+- `requestIdleCallback`
+This allows you to build views in static HTML which will then automatically be hydrated via Percolate and your own custom JS files.
+
+## Getting Started
+1. First things first, you'll need a basic website structure and an HTTP server to work from. Run the following commands to set that up:
+```bash
+mkdir my-website
+cd my-website
+touch index.html app.js
+```
+For the HTTP server, feel free to use anything you'd like. Personally I use the node package `http-server` installed globally.
+
+2. Next you will want to download the Percolate library to the root of your web project, you can download the [unminified version]() or the [minified version]() depending on your needs. Once the libary is in your file structure, just include Percolate in your HTML via a module script tag:
+```html
+<script src="/Percolate.js" type="module"></script>
+```
+
+3. Now that you've included the library, you need to initialize Percolate with whatever options you need:
+```html
+<script type="module">
+  window.WebComponentRender({
+    baseURL: '/',
+    tagPartial: 'tagprefix-'
+  });
+</script>
+```
+Here is the API for the options object:
+`baseURL`: The base url path for where your JS files are saved, defaults to `/`.
+`tagPartial`: The prefix of all your custom tags, e.g. if your tags look like this `<test-header></test-header>` then the `tagPartial` would be `test-`.
+
+4. Now you're ready to build your site! The basic flow is to build out your semantic HTML using custom tags, e.g.:
+```html
+<test-navbar>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+</test-navbar>
+<test-clicker>
+  <div id="count"></div>
+  <button id="inc">Inc</button>
+  <button id="dec">Dec</button>
+</test-clicker>
+```
+Then you build the corresponding JS files for each of your tags:
+`test-navbar.js`
+```javascript
+// Whatever JS you want to interact with your component
+document.querySelector('test-navbar').addEventListener('click', e => {
+  if(e.target.tagName.toLowerCase() === 'a') {
+    e.preventDefault();
+    // Do some custom routing stuff
+  }
+});
+```
+`test-clicker.js`
+```javascript
+// Even web component code!
+class TestClicker extends HTMLElement {
+  constructor() {
+    super();
+    this.count = 0;
+  }
+
+  inc() {
+    this.count++;
+    this.querySelector('#count').innerText = this.count;
+  }
+
+  dec() {
+    this.count--;
+    this.querySelector('#count').innerText = this.count;
+  }
+
+  connectedCallback() {
+    this.querySelector('#count').innerText = this.count;
+    this.querySelector('#inc').addEventListener('click', this.inc);
+    this.querySelector('#dec').addEventListener('click', this.dec);
+  }
+}
+
+window.customElements.define('test-clicker', TestClicker);
+```
+
+5. You can also add a custom data attribute to your custom tags that allows Percolate to load the corresponding JS file only if the component is in view via an `IntersectionObserver`:
+```html
+<test-component data-loadonview="true"></test-component>
+```
+
+## Conclusion
+That's the gist of the Percolate library! You can build static-based websites that gracefully adapt JS and interactivity depending on your needs.
