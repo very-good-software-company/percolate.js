@@ -36,8 +36,8 @@ For the HTTP server, feel free to use anything you'd like. Personally I use the 
 </script>
 ```
 Here is the API for the options object:
-`baseURL`: The base url path for where your JS files are saved, defaults to `/`.
-`tagPartial`: The prefix of all your custom tags, e.g. if your tags look like this `<test-header></test-header>` then the `tagPartial` would be `test-`.
+- `baseURL`: The base url path for where your JS files are saved, defaults to `/`.
+- `tagPartial`: The prefix of all your custom tags, e.g. if your tags look like this `<test-header></test-header>` then the `tagPartial` would be `test-`.
 
 4. Now you're ready to build your site! The basic flow is to build out your semantic HTML using custom tags, e.g.:
 ```html
