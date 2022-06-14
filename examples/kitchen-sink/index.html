@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percolate Kitchen Sink</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <sean-hash-navbar>
+    <a href="#/">Home</a>
+    <a href="#/about">About</a>
+  </sean-hash-navbar>
+  <h1>Sean's Component Page</h1>
+  <sean-hash-router>
+    <sean-page path="/">
+      <h1>Home Page</h1>
+      <sean-clicker>
+        <div class="click-count">Count: 0</div>
+        <button class="inc">Inc</button>
+        <button class="dec">Dec</button>
+      </sean-clicker>
+    </sean-page>
+    <sean-page path="/about">
+      <h1>About Page</h1>
+    </sean-page>
+  </sean-hash-router>
+  <div style="height: 5000px; width: 100%; background-color: violet;"></div>
+  <sean-view-test data-loadonview="true">
+    <h1>Sean View Test</h1>
+  </sean-view-test>
+  <script type="module" src="/BaseComponent.js"></script>
+  <script type="module" src="/percolate.js"></script>
+  <script type="module">
+    window.Percolate({
+      baseURL: '/',
+      tagPartial: 'sean-'
+    });
+  </script>
+</body>
+</html>
