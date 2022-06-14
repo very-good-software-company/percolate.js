@@ -29,7 +29,7 @@ For the HTTP server, feel free to use anything you'd like. Personally I use the 
 3. Now that you've included the library, you need to initialize Percolate with whatever options you need:
 ```html
 <script type="module">
-  window.WebComponentRender({
+  window.Percolate({
     baseURL: '/',
     tagPartial: 'tagprefix-'
   });
