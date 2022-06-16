@@ -133,5 +133,7 @@ window.customElements.define('test-clicker', TestClicker);
 ## Conclusion
 That's the gist of the Percolate library! You can build static-based websites that gracefully adapt JS and interactivity depending on your needs.
 
+If you happen to find issues or would like to suggest a new feature, please feel free to open an issue for this repository!
+
 ## Credit
 SVG and PNG Percolator Icon by: [StudioFibonacci](https://openclipart.org/artist/StudioFibonacci)
