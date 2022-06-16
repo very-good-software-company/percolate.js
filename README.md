@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./percolator.png" alt="Percolate.js"/>
+</p>
+
 # Percolate.js
 Build websites/webapps using standard web apis and custom tags all while enjoying simple JS hydration.
 
@@ -123,3 +127,6 @@ window.customElements.define('test-clicker', TestClicker);
 
 ## Conclusion
 That's the gist of the Percolate library! You can build static-based websites that gracefully adapt JS and interactivity depending on your needs.
+
+## Credit
+SVG and PNG Percolator Icon by: [StudioFibonacci](https://openclipart.org/artist/StudioFibonacci)
