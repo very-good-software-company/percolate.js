@@ -26,12 +26,8 @@ npm install -g http-server
 http-server
 ```
 
-2. Next you will want to download the Percolate library to the root of your web project, you can download the [unminified version]() or the [minified version]() depending on your needs. Once the libary is in your file structure, just include Percolate in your HTML via a module script tag:
-```html
-<script src="/Percolate.js" type="module"></script>
-```
+2. Next you will want to download the Percolate library to the root of your web project, you can download the [unminified version]() or the [minified version]() depending on your needs. Once the libary is in your file structure, just import Percolate via a module script tag and initialize Percolate with whatever options you need:
 
-3. Now that you've included the library, you need to initialize Percolate with whatever options you need:
 ```html
 <script type="module">
   window.Percolate({
@@ -44,7 +40,7 @@ Here is the API for the options object:
 - `baseURL`: The base url path for where your JS files are saved, defaults to `/`.
 - `tagPartial`: The prefix of all your custom tags, e.g. if your tags look like this `<test-header></test-header>` then the `tagPartial` would be `test-`.
 
-4. Now you're ready to build your site! The basic flow is to build out your semantic HTML using custom tags, e.g.:
+3. Now you're ready to build your site! The basic flow is to build out your semantic HTML using custom tags, e.g.:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -116,7 +112,7 @@ class TestClicker extends HTMLElement {
 window.customElements.define('test-clicker', TestClicker);
 ```
 
-5. You can also add a custom data attribute to your custom tags that allows Percolate to load the corresponding JS file only if the component is in view via an `IntersectionObserver`:
+4. You can also add a custom data attribute to your custom tags that allows Percolate to load the corresponding JS file only if the component is in view via an `IntersectionObserver`:
 ```html
 <test-component data-loadonview="true"></test-component>
 ```

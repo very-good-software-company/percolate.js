@@ -31,9 +31,10 @@
     <h1>Sean View Test</h1>
   </sean-view-test>
   <script type="module" src="/BaseComponent.js"></script>
-  <script type="module" src="/percolate.js"></script>
   <script type="module">
-    window.Percolate({
+    import Percolate from './percolate.js';
+
+    Percolate({
       baseURL: '/',
       tagPartial: 'sean-'
     });

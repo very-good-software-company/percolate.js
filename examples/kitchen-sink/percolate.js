@@ -18,7 +18,7 @@ const intersectionObserver = new IntersectionObserver((entries, observer) => {
   });
 });
 
-window.Percolate = function({ baseURL, tagPartial }) {
+export default function Percolate({ baseURL, tagPartial }) {
   const snapshots = document.evaluate(
     `//*[starts-with(name(), "${tagPartial}")]`,
     document.body,
