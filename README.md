@@ -17,9 +17,13 @@ This allows you to build views in static HTML which will then automatically be h
 ```bash
 mkdir my-website
 cd my-website
-touch index.html app.js
+touch index.html
 ```
-For the HTTP server, feel free to use anything you'd like. Personally I use the node package `http-server` installed globally.
+For the HTTP server, feel free to use anything you'd like. Personally I use the node package `http-server` installed globally via npm. Once `http-server` is installed globally simply run the `http-server` command from the root of your website.
+```bash
+npm install -g http-server
+http-server
+```
 
 2. Next you will want to download the Percolate library to the root of your web project, you can download the [unminified version]() or the [minified version]() depending on your needs. Once the libary is in your file structure, just include Percolate in your HTML via a module script tag:
 ```html
