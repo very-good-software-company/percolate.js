@@ -10,6 +10,7 @@ Percolate.js uses a few web apis to allow for basic HTML pages to be transformed
 - `Intersection Observer`
 - `document.evaluate`
 - `requestIdleCallback`
+
 This allows you to build views in static HTML which will then automatically be hydrated via Percolate and your own custom JS files.
 
 ## Getting Started
