@@ -6,7 +6,7 @@
 Build websites/webapps using standard web apis and custom tags all while enjoying simple JS hydration.
 
 ## Why Percolate.js?
-I built Percolate for the sole purpose of being able to build rich, interactive websites that load fast and don't rely on large build-tools, setting up environments, or complex JS-only frameworks. The entire idea of Percolate is to allow for one to build simple static sites that have a small layer of dynamic interactivity to them all using simple HTML, CSS, and JS.
+Percolate was built for the sole purpose of being able to build rich, interactive websites that load fast and don't rely on large build-tools, setting up environments, or complex JS-only frameworks. The entire idea of Percolate is to allow for one to build simple static sites that have a small layer of dynamic interactivity to them all using simple HTML, CSS, and JS.
 
 ## How does Percolate.js work?
 Percolate.js uses a few web apis to allow for basic HTML pages to be transformed via hydrating custom, semantic tags. Currently the libary uses:
@@ -30,7 +30,7 @@ npm install -g http-server
 http-server
 ```
 
-2. Next you will want to download the Percolate library to the root of your web project, you can download the [unminified version]() or the [minified version]() depending on your needs. Once the libary is in your file structure, just import Percolate via a module script tag and initialize Percolate with whatever options you need:
+2. Next you will want to download the Percolate library to the root of your web project, you can download the [unminified version](https://raw.githubusercontent.com/very-good-software-company/percolate.js/master/percolate.js) or the [minified version](https://raw.githubusercontent.com/very-good-software-company/percolate.js/master/percolate.min.js) depending on your needs. Once the libary is in your file structure, just import Percolate via a module script tag and initialize Percolate with whatever options you need:
 
 ```html
 <script type="module">
@@ -132,6 +132,8 @@ window.customElements.define('test-clicker', TestClicker);
 
 ## Conclusion
 That's the gist of the Percolate library! You can build static-based websites that gracefully adapt JS and interactivity depending on your needs.
+
+If you happen to find issues or would like to suggest a new feature, please feel free to open an issue for this repository!
 
 ## Credit
 SVG and PNG Percolator Icon by: [StudioFibonacci](https://openclipart.org/artist/StudioFibonacci)
