@@ -34,9 +34,13 @@ http-server
 
 ```html
 <script type="module">
-  window.Percolate({
+  import Percolate from './path/to/percolate.js';
+  
+  Percolate({
     baseURL: '/',
-    tagPartial: 'tagprefix-'
+    tagPartial: 'tagprefix-',
+    successCallback: importPath => { console.log(`imported ${importPath}`) },
+    errorCallback: importPath => { console.error(`Error importing ${importPath}`) }
   });
 </script>
 ```
