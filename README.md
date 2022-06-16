@@ -6,7 +6,7 @@
 Build websites/webapps using standard web apis and custom tags all while enjoying simple JS hydration.
 
 ## Why Percolate.js?
-I built Percolate for the sole purpose of being able to build rich, interactive websites that load fast and don't rely on large build-tools, setting up environments, or complex JS-only frameworks. The entire idea of Percolate is to allow for one to build simple static sites that have a small layer of dynamic interactivity to them all using simple HTML, CSS, and JS.
+Percolate was built for the sole purpose of being able to build rich, interactive websites that load fast and don't rely on large build-tools, setting up environments, or complex JS-only frameworks. The entire idea of Percolate is to allow for one to build simple static sites that have a small layer of dynamic interactivity to them all using simple HTML, CSS, and JS.
 
 ## How does Percolate.js work?
 Percolate.js uses a few web apis to allow for basic HTML pages to be transformed via hydrating custom, semantic tags. Currently the libary uses:
