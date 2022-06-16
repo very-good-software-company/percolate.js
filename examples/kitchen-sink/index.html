@@ -36,7 +36,9 @@
 
     Percolate({
       baseURL: '/',
-      tagPartial: 'sean-'
+      tagPartial: 'sean-',
+      successCallback: importPath => { console.log(`imported ${importPath}`) },
+      errorCallback: importPath => { console.error(`Error importing ${importPath}`) }
     });
   </script>
 </body>

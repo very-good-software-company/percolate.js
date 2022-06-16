@@ -1,10 +1,8 @@
-function importJS(path) {
+function importJS({ path, success, error }) {
   requestIdleCallback(() => {
     import(path)
-    .then(() => {
-      console.log(`imported ${path}`);
-    })
-    .catch(console.log);
+    .then(() => success(path))
+    .catch(() => error(path));
   });
 }
 
@@ -12,13 +10,26 @@ const intersectionObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
       const nodeName = entry.target.nodeName.toLowerCase();
-      importJS(`${observer.baseImportPath}${nodeName}.js`);
+      importJS({
+        path: `${observer.baseImportPath}${nodeName}.js`,
+        success: observer.importSuccessCallback,
+        error: observer.importErrorCallback
+      });
       observer.unobserve(entry.target);
     }
   });
 });
 
-export default function Percolate({ baseURL, tagPartial }) {
+export default function Percolate({
+  baseURL = '/',
+  tagPartial = '',
+  successCallback = () => {},
+  errorCallback = console.error
+}) {
+  if(!tagPartial) {
+    return console.error('Percolate Error: Missing tagPartial argument');
+  }
+
   const snapshots = document.evaluate(
     `//*[starts-with(name(), "${tagPartial}")]`,
     document.body,
@@ -34,9 +45,15 @@ export default function Percolate({ baseURL, tagPartial }) {
 
     if(loadOnView) {
       intersectionObserver.baseImportPath = baseURL;
+      intersectionObserver.importSuccessCallback = successCallback;
+      intersectionObserver.importErrorCallback = errorCallback;
       intersectionObserver.observe(node);
     } else {
-      importJS(`${baseURL}${nodeName}.js`);
+      importJS({
+        path: `${baseURL}${nodeName}.js`,
+        success: successCallback,
+        error: errorCallback
+      });
     }
   }
 }

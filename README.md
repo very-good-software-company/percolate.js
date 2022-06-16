@@ -37,8 +37,10 @@ http-server
 </script>
 ```
 Here is the API for the options object:
-- `baseURL`: The base url path for where your JS files are saved, defaults to `/`.
+- `baseURL` (Optional): The base url path for where your JS files are saved, defaults to `/`.
 - `tagPartial`: The prefix of all your custom tags, e.g. if your tags look like this `<test-header></test-header>` then the `tagPartial` would be `test-`.
+- `successCallback` (Optional): Function that runs each time a JS module is successfully imported.
+- `errorCallback` (Optional): Function that runs as part of the import `catch` statement.
 
 3. Now you're ready to build your site! The basic flow is to build out your semantic HTML using custom tags, e.g.:
 ```html
@@ -65,7 +67,9 @@ Here is the API for the options object:
   <script type="module">
     window.Percolate({
       baseURL: '/',
-      tagPartial: 'test-'
+      tagPartial: 'test-',
+      successCallback: importPath => { console.log(`imported ${importPath}`) },
+      errorCallback: importPath => { console.error(`Error importing ${importPath}`) }
     });
   </script>
 </body>
