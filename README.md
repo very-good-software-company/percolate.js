@@ -30,7 +30,7 @@ npm install -g http-server
 http-server
 ```
 
-2. Next you will want to download the Percolate library to the root of your web project, you can download the [unminified version]() or the [minified version]() depending on your needs. Once the libary is in your file structure, just import Percolate via a module script tag and initialize Percolate with whatever options you need:
+2. Next you will want to download the Percolate library to the root of your web project, you can download the [unminified version](https://raw.githubusercontent.com/very-good-software-company/percolate.js/master/percolate.js) or the [minified version](https://raw.githubusercontent.com/very-good-software-company/percolate.js/master/percolate.min.js) depending on your needs. Once the libary is in your file structure, just import Percolate via a module script tag and initialize Percolate with whatever options you need:
 
 ```html
 <script type="module">
