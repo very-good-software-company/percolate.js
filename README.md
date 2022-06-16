@@ -67,9 +67,10 @@ Here is the API for the options object:
     <button id="inc">Inc</button>
     <button id="dec">Dec</button>
   </test-clicker>
-  <script type="module" src="/percolate.js"></script>
   <script type="module">
-    window.Percolate({
+    import Percolate from './percolate.js';
+
+    Percolate({
       baseURL: '/',
       tagPartial: 'test-',
       successCallback: importPath => { console.log(`imported ${importPath}`) },
