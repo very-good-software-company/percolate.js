@@ -1,0 +1,51 @@
+:root {
+  --color1: #779779;
+  --color2: #3C3B59;
+  --color3: #5F79AC;
+  --color4: #7DA0CC;
+  --color5: #ABB4CF;
+
+  --font-color: #000000;
+  --font-base-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: var(--font-base-size);
+  color: var(--font-color);
+  background-image: url('/assets/img/triangles_pattern.webp');
+}
+
+#main-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#main-nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--font-color);
+  margin-right: 10px;
+}
+
+#main-nav a:visited {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 80%;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -1,0 +1,34 @@
+{
+  "inventory": [
+    {
+      "id": 1,
+      "name": "Percolator",
+      "image": "/assets/img/percolator1.jpg",
+      "price": 64.99
+    },
+    {
+      "id": 2,
+      "name": "Percolator 2: Electric Boogaloo",
+      "image": "/assets/img/percolator1.jpg",
+      "price": 74.99
+    },
+    {
+      "id": 3,
+      "name": "Percolator 3: The Percolating",
+      "image": "/assets/img/percolator1.jpg",
+      "price": 29.99
+    },
+    {
+      "id": 4,
+      "name": "Percolator 4: Percolate This!",
+      "image": "/assets/img/percolator1.jpg",
+      "price": 109.99
+    },
+    {
+      "id": 5,
+      "name": "Percolator 5: I'll Perc-you-later",
+      "image": "/assets/img/percolator1.jpg",
+      "price": 63.99
+    }
+  ]
+}

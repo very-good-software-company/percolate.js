@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>Sean's Percolator Store</title>
+  <meta name="description" content="Sean's glorious store of percolators!">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav id="main-nav">
+    <a href="/">Home</a>
+    <a href="/store">Store</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <script type="module">
+    import Percolate from './percolate.js';
+
+    Percolate({
+      baseURL: '/',
+      tagPartial: 'sean-',
+      successCallback: importPath => { console.log(`imported ${importPath}`) },
+      errorCallback: importPath => { console.error(`Error importing ${importPath}`) }
+    });
+  </script>
+</body>
+</html>
