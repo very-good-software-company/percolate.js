@@ -68,7 +68,7 @@ Here is the API for the options object:
   <script type="module">
     window.Percolate({
       baseURL: '/',
-      tagPartial: 'sean-'
+      tagPartial: 'test-'
     });
   </script>
 </body>
