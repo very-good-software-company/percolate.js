@@ -76,6 +76,7 @@ Here is the API for the options object:
 </html>
 ```
 Then you build the corresponding JS files for each of your tags:
+
 `test-navbar.js`
 ```javascript
 // Whatever JS you want to interact with your component
