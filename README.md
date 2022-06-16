@@ -45,15 +45,34 @@ Here is the API for the options object:
 
 4. Now you're ready to build your site! The basic flow is to build out your semantic HTML using custom tags, e.g.:
 ```html
-<test-navbar>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-</test-navbar>
-<test-clicker>
-  <div id="count"></div>
-  <button id="inc">Inc</button>
-  <button id="dec">Dec</button>
-</test-clicker>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percolate Kitchen Sink</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <test-navbar>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+  </test-navbar>
+  <test-clicker>
+    <div id="count"></div>
+    <button id="inc">Inc</button>
+    <button id="dec">Dec</button>
+  </test-clicker>
+  <script type="module" src="/percolate.js"></script>
+  <script type="module">
+    window.Percolate({
+      baseURL: '/',
+      tagPartial: 'sean-'
+    });
+  </script>
+</body>
+</html>
 ```
 Then you build the corresponding JS files for each of your tags:
 `test-navbar.js`
